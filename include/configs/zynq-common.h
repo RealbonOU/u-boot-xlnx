@@ -233,6 +233,7 @@
 	"loadbootenv=load mmc 0 ${loadbootenv_addr} ${bootenv}\0" \
 	"importbootenv=echo Importing environment from SD ...; " \
 		"env import -t ${loadbootenv_addr} $filesize\0" \
+	"modeboot=sdboot\0" \
 	"sd_uEnvtxt_existence_test=test -e mmc 0 /uEnv.txt\0" \
 	"preboot=if test $modeboot = sdboot && env run sd_uEnvtxt_existence_test; " \
 			"then if env run loadbootenv; " \
