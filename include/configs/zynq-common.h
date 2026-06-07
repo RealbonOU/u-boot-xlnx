@@ -216,6 +216,8 @@
 	"ramdisk_image=uramdisk.image.gz\0"	\
 	"ramdisk_load_address=0x4000000\0"	\
 	"devicetree_image=devicetree.dtb\0"	\
+	"bootargs=console=ttyPS0,115200 root=/dev/mmcblk0p2 rw " \
+		"earlyprintk rootfstype=ext4 rootwait\0" \
 	"devicetree_load_address=0x2000000\0"	\
 	"bitstream_image=system.bit.bin\0"	\
 	"boot_image=BOOT.bin\0"	\
