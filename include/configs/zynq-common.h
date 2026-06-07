@@ -263,8 +263,11 @@
 			"echo Running uenvcmd ...; " \
 			"run uenvcmd; " \
 		"fi\0" \
+	"fpgaload=load mmc 0 ${loadbit_addr} system.bit && " \
+		"fpga loadb 0 ${loadbit_addr} ${filesize}\0" \
 	"sdboot=if mmcinfo; then " \
 			"run uenvboot; " \
+			"run fpgaload; " \
 			"echo Copying Linux from SD to RAM... && " \
 			"load mmc 0 ${kernel_load_address} ${kernel_image} && " \
 			"load mmc 0 ${devicetree_load_address} ${devicetree_image} && " \
